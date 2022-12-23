@@ -8,6 +8,10 @@ export default function Carrinho() {
     return<>
     <Image source={imgTopo} style={styles.topo}/>
     <Text style={styles.cartTitle}>Detalhes do Carrinho</Text>
+        <View>
+            <Text>Espetinho Completo</Text>
+            <Text>espeto completo de picanha, com acompanhamento de arroz, mandioca, vinagrete, e farofa</Text>
+        </View>
     </>
 }
 const styles = StyleSheet.create({
