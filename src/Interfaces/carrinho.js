@@ -1,37 +1,22 @@
 import React from "react";
-import { StyleSheet, Image, Dimensions, View, Text, Button, Alert } from "react-native";
-import imgTopo from '../../assets/topo.png'
+import { StyleSheet, Image, Dimensions, View, Text, Alert, Button } from "react-native";
+import imgTopo from '../../assets/topo.png';
+import Titulo from './src/componentes/texto';
 
 const width = Dimensions.get('screen').width;
 
 export default function Carrinho() {
     return<>
     <Image source={imgTopo} style={styles.topo}/>
-    
     <Text style={styles.cartTitle}>Detalhes do Carrinho</Text>
-        <View style={styles.textsCart}>
-            <Text style={styles.titleCart}>Espetinho Completo</Text>
-            <Text style={styles.descriptionCart}>espeto completo de picanha, com acompanhamento de arroz, mandioca, vinagrete, e farofa.</Text>
+        <View style={styles.textsproduto}>
+            <Titulo>Espeto de picanha do LULA</Titulo>
+            <Text style={styles.descricaoProduto}>Espeto completo de picanha, com acompanhamento de arroz, mandioca, vinagrete, e farofa</Text>
+            <Text>R$40,00</Text>
+            <Button title="Adicionar ao carrinho" color="#089944" onPress={() => Alert.alert('fazi o ELi')}/>
         </View>
-
-        <Button title="Adicionar" onPress={() => Alert.alert('Simple Button pressed')}/>
     </>
 }
-const App = () => {
-    const createTwoButtonAlert = () =>
-      Alert.alert(
-        "Alert Title",
-        "My Alert Msg",
-        [
-          {
-            text: "Cancel",
-            onPress: () => console.log("Cancel Pressed"),
-            style: "cancel"
-          },
-          { text: "OK", onPress: () => console.log("OK Pressed") }
-        ]
-      );}
-
 const styles = StyleSheet.create({
     topo: {
         with: "100%",
@@ -41,26 +26,26 @@ const styles = StyleSheet.create({
     cartTitle: {
         width:"100%",
         color: "#FFF",
-        fontSize: 18, 
+        fontSize: 18,
         lineHeight:24,
         marginTop: 32,
         textAlign: "center",
         position: "absolute",
 
     },
-    textsCart: {
-        margin:16,
+    textsproduto:{
+        margin:16
+    },
+    nomeProduto:{
+        width:"100%",
+        fontSize:18,
         
     },
-    titleCart:{
+    descricaoProduto:{
         width:"100%",
-        fontSize: 20,
-        lineHeight:28,
-        fontWeigth: "bold",
-    },
-    descriptionCart:{
+        marginTop: 16,
         fontSize: 14,
-        lineHeight:28,
     }
+
 });
 
